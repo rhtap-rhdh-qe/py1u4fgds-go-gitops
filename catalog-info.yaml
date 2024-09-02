@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: py1u4fgds-go-gitops
+  description: This is GitOps manifest for py1u4fgds-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: py1u4fgds-go
+    janus-idp.io/tekton: py1u4fgds-go 
+    backstage.io/kubernetes-id: py1u4fgds-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:py1u4fgds-go
